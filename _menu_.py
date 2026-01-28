@@ -30,7 +30,7 @@ def _clearAndCreate(need_OsRemove, name):
 # Меню
 while True:
     _clear()
-    print("_nzSetup | v0.1")
+    print("_nzSetup | v0.1.1")
     print("<---------------->")
     print("[1]: скачать игру")
     print("[2]: настройки")
@@ -118,4 +118,5 @@ while True:
                     webbrowser.open("https://www.youtube.com/@NazzyChannel")
 
         case "0":
+
             break
