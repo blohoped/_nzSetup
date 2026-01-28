@@ -128,27 +128,28 @@ def menu(forStart):
 
                     case "3":
                         _clear()
-                        if os.path.exists(Path(_path_) / "mods") and os.path.exists(Path(_path_) / "saves") and os.path.exists(Path(_path_) / "shaderpacks") and os.path.exists(Path(_path_) / "resourcepacks"):
-                            # проверяет, есть ли папки в каталоге, и если да - пересоздаёт (нужно, чтобы при повторном скачивании режимов, сами режимы не накладывались друг на друга)
-                            _clearAndCreate(False, "mods")
+                        if _shouldUnzip != "False":
+                            if os.path.exists(Path(_path_) / "mods") and os.path.exists(Path(_path_) / "saves") and os.path.exists(Path(_path_) / "shaderpacks") and os.path.exists(Path(_path_) / "resourcepacks"):
+                                # проверяет, есть ли папки в каталоге, и если да - пересоздаёт (нужно, чтобы при повторном скачивании режимов, сами режимы не накладывались друг на друга)
+                                _clearAndCreate(False, "mods")
 
-                            _clearAndCreate(False, "saves")
+                                _clearAndCreate(False, "saves")
 
-                            _clearAndCreate(False, "shaderpacks")
+                                _clearAndCreate(False, "shaderpacks")
 
-                            _clearAndCreate(False, "resourcepacks")
+                                _clearAndCreate(False, "resourcepacks")
 
-                        try:
-                            # также очищает доп. файлы
-                            _clearAndCreate(True, "options.txt")
+                            try:
+                                # также очищает доп. файлы
+                                _clearAndCreate(True, "options.txt")
 
-                            _clearAndCreate(True, "optionsof.txt")
+                                _clearAndCreate(True, "optionsof.txt")
 
-                            _clearAndCreate(True, "optionsshaders.txt")
+                                _clearAndCreate(True, "optionsshaders.txt")
 
-                            _clearAndCreate(False, "config")
-                        except Exception as e:
-                            pass # их может и не быть, по этому здесь стоит заглушка
+                                _clearAndCreate(False, "config")
+                            except Exception as e:
+                                pass # их может и не быть, по этому здесь стоит заглушка
 
                         try:
                             _pathGame = os.path.join(str(Path.home() / "Downloads"), _saveData.name + ".zip")
